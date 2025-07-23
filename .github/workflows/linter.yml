@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: "22"
       - name: Install dependencies
-        run: npm install # Ensure all your project dependencies are installed
+        run: npm install
       ################################
       # Run Linter against code base #
       ################################
