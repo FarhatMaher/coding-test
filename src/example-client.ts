@@ -1,4 +1,4 @@
-import { BookSearchApiClient } from "./BookSearchApiClient";
+import BookSearchApiClient from "./BookSearchApiClient";
 
 // Example usage
 async function main() {

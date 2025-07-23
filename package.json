@@ -4,6 +4,7 @@
   "description": "Coding test project for EDF Energy",
   "author": "Maher Farhat",
   "scripts": {
+    "serve": "npm run build & serve -l 3000",
     "test": "jest /src/*",
     "build": "tsc",
     "lint": "eslint . --ext .ts,.tsx"
@@ -26,5 +27,8 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
   }
 }

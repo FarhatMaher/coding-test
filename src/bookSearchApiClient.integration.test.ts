@@ -1,5 +1,5 @@
 // Integration tests for BookSearchApiClient
-import { BookSearchApiClient } from "./BookSearchApiClient";
+import BookSearchApiClient from "./BookSearchApiClient";
 import nock from "nock";
 
 describe("BookSearchApiClient - Integration Tests", () => {
