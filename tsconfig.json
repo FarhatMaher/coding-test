@@ -9,10 +9,6 @@
     "strict": true,
     "lib": ["DOM", "ES2015"]
   },
-    "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }

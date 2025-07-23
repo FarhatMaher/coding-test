@@ -4,7 +4,9 @@
   "description": "Coding test project for EDF Energy",
   "author": "Maher Farhat",
   "scripts": {
-    "test": "jest /src/*"
+    "test": "jest /src/*",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
