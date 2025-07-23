@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Search</title>
+</head>
+<body>
+  <h1>Search for Books by Author</h1>
+
+  <label for="author">Author Name:</label>
+  <input type="text" id="author" name="author" placeholder="Enter author name" required>
+
+  <label for="limit">Limit:</label>
+  <input type="number" id="limit" name="limit" value="5" min="1" required>
+
+  <button id="searchButton">Search</button>
+
+  <div id="results"></div>
+
+
+  <script type="module">
+    import BookSearchApiClient from './dist/bookSearchApiClient.js';
+    const apiUrl = "https://api.example.com";
+    const format = "json";
+    const bookSearchClient = new BookSearchApiClient(apiUrl, format);
+
+    document.getElementById("searchButton").addEventListener("click", async () => {
+      const authorName = document.getElementById("author").value;
+      const limit = parseInt(document.getElementById("limit").value, 10);
+
+      try {
+        const books = await bookSearchClient.getBooksByAuthor(authorName, limit);
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = ""; // Clear previous results
+
+        if (books.length > 0) {
+          const ul = document.createElement("ul");
+          books.forEach(book => {
+            const li = document.createElement("li");
+            li.textContent = `Title: ${book.title}, Author: ${book.author}, ISBN: ${book.isbn}, Quantity: ${book.quantity}, Price: ${book.price}`;
+            ul.appendChild(li);
+          });
+          resultsDiv.appendChild(ul);
+        } else {
+          resultsDiv.innerHTML = "No books found.";
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    });
+  </script>
+</body>
+</html>
