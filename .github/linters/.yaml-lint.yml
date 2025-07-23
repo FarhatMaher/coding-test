@@ -1,10 +1,10 @@
 ---
-# Override default rule settings of YamlLint, full list of rules and meaning: https://yamllint.readthedocs.io/en/stable/rules.html#
-# It extends the default conf by adjusting some options.
+#  Override default rule settings of YamlLint, full list of rules and meaning: https://yamllint.readthedocs.io/en/stable/rules.html#
+#  It extends the default conf by adjusting some options.
 
 extends: default
 
 rules:
-  line-length: disable # Disable line-length rule
+  line-length: disable #  Disable line-length rule
   truthy:
-    allowed-values: ["true", "false", "on"] # Allowed values for truthy rule
+    allowed-values: ["true", "false", "on"] #  Allowed values for truthy rule

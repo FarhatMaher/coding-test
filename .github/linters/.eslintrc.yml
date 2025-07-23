@@ -1,3 +1,5 @@
+---
+# ESLint configuration for TypeScript projects
 env:
   browser: true
   es2021: true
@@ -9,8 +11,6 @@ extends:
   - "plugin:prettier/recommended"
 
 parser: "@typescript-eslint/parser"
-parserOptions:
-  project: "./tsconfig.json"
 
 plugins:
   - "@typescript-eslint"
