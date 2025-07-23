@@ -1,4 +1,4 @@
-export class BookSearchApiClient {
+export default class BookSearchApiClient {
   private format: "json" | "xml";
   private apiUrl: string;
 
@@ -6,7 +6,7 @@ export class BookSearchApiClient {
     // Validate the API URL in the constructor
     this.validateApiUrl(apiUrl);
 
-    // Initialize the properties
+    // Initialise the properties
     this.apiUrl = apiUrl;
     this.format = format;
   }

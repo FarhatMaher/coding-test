@@ -1,5 +1,5 @@
 // Unit tests for BookSearchApiClient
-import { BookSearchApiClient } from "./BookSearchApiClient";
+import BookSearchApiClient from "./BookSearchApiClient";
 import { JSDOM } from "jsdom";
 
 // Mocking the global fetch function
