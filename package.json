@@ -1,0 +1,20 @@
+{
+  "name": "coding-test-edfenergy",
+  "version": "1.0.0",
+  "description": "Coding test project for EDF Energy",
+  "author": "Maher Farhat",
+  "scripts": {
+    "test": "jest /src/*"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/jsdom": "^21.1.7",
+    "jest": "^30.0.5",
+    "nock": "^14.0.6",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "jsdom": "^26.1.0"
+  }
+}
