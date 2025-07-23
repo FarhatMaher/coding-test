@@ -10,11 +10,6 @@ permissions:
   packages: read
   statuses: write
 
-#
-# Documentation:
-# https://help.github.com/en/articles/workflow-syntax-for-github-actions
-#
-
 #############################
 # Start the job on all push #
 #############################
@@ -44,7 +39,12 @@ jobs:
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
-
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        run: npm install # Ensure all your project dependencies are installed
       ################################
       # Run Linter against code base #
       ################################

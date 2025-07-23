@@ -1,4 +1,14 @@
+---
+#################################
+#################################
+##  Jest Tests GitHub Actions  ##
+#################################
+#################################
 name: Run Jest Tests
+permissions:
+  contents: read
+  packages: read
+  statuses: write
 
 on:
   push:
@@ -12,18 +22,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
 
-    - name: Install dependencies
-      run: |
-        npm install
+      - name: Install dependencies
+        run: |
+          npm install
 
-    - name: Run tests
-      run: |
-        npm test
+      - name: Run tests
+        run: |
+          npm test
