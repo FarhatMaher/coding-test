@@ -109,6 +109,7 @@ export class BookSearchApiClient {
       // Try to create a new URL object to check if it's a valid URL
       new URL(apiUrl);
     } catch (error) {
+      console.error("Invalid API URL:", error);
       throw new Error("API URL must be a valid URL");
     }
   }
