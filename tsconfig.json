@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2022",
     "module": "ES6",
     "moduleResolution": "node",
     "outDir": "./dist",
     "sourceMap": true,
     "esModuleInterop": true,
     "strict": true,
-    "lib": ["DOM", "ES2015"]
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

@@ -36,25 +36,28 @@ export default class BookSearchApiClient {
       let books: Book[] = [];
 
       switch (this.format) {
-        case "json":
+        case "json": {
           // Parse JSON response
           console.log("Parsing JSON response...");
           const json: ApiResponseJson[] = await response.json();
           books = this.parseJsonResponse(json);
-          return books;
-        case "xml":
+          break;
+        }
+        case "xml": {
           // Parse XML response
           console.log("Parsing XML response...");
           const xml = await response.text();
           books = this.parseXmlResponse(xml);
-          return books;
+          break;
+        }
         default:
           // If format ever gains a new member, TS will error here
           throw new Error(`Unsupported format: ${this.format}`);
       }
+      return books;
     } catch (error) {
       console.error("Error fetching books:", error);
-      throw new Error("Request failed");
+      throw new Error("Request failed.", { cause: error });
     }
   }
 
