@@ -1,4 +1,59 @@
-# Coding test
+# coding-test-edfenergy
+
+> A small coding-test project for EDF Energy by Maher Farhat.
+
+## Prerequisites
+
+- **Node.js** (v14 or newer)
+- **npm** (v6 or newer)
+
+## Installation
+
+1. Clone the repo
+
+   ```bash
+   git clone https://github.com/FarhatMaher/coding-test.git
+   cd coding-test-edfenergy
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Available Scripts
+
+| Script          | Description                                |
+| --------------- | ------------------------------------------ |
+| `npm run build` | Compile TypeScript (`tsc`) into JavaScript |
+| `npm run serve` | Build & serve the app on port 3000         |
+| `npm test`      | Run Jest tests for the `src/` directory    |
+| `npm run lint`  | Run ESLint on all `.ts` files              |
+
+## Usage
+
+```bash
+npm run build
+```
+
+Serve the output
+
+```bash
+npm run serve
+```
+
+Run tests at any time
+
+```bash
+npm run test
+```
+
+Check code style
+
+```bash
+npm run lint
+```
 
 #### Code issues identified:
 
