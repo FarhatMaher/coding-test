@@ -1,6 +1,61 @@
-# Coding test
+# coding-test-edfenergy
 
-#### Code issues identified:
+> A small coding-test project for EDF Energy by Maher Farhat.
+
+## Prerequisites
+
+- **Node.js** (v14 or newer)
+- **npm** (v6 or newer)
+
+## Installation
+
+1. Clone the repo
+
+   ```bash
+   git clone https://github.com/FarhatMaher/coding-test.git
+   cd coding-test-edfenergy
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Available Scripts
+
+| Script          | Description                                |
+| --------------- | ------------------------------------------ |
+| `npm run build` | Compile TypeScript (`tsc`) into JavaScript |
+| `npm run serve` | Build & serve the app on port 3000         |
+| `npm test`      | Run Jest tests for the `src/` directory    |
+| `npm run lint`  | Run ESLint on all `.ts` files              |
+
+## Usage
+
+```bash
+npm run build
+```
+
+Serve the output
+
+```bash
+npm run serve
+```
+
+Run tests at any time
+
+```bash
+npm run test
+```
+
+Check code style
+
+```bash
+npm run lint
+```
+
+### Code issues identified
 
 1. XMLHttpRequest is asynchronous:
    - The xhr.onload function is asynchronous, meaning that the result is populated only when the request completes, but the getBooksByAuthor function does not handle this properly. The function immediately returns result before the request is complete, which will always return an empty array because the request is asynchronous.
@@ -9,7 +64,7 @@
 3. Incorrect module.exports:
    - The code exports GetBookListApiClient which is not defined. The correct export should be BookSearchApiClient.
 
-#### Code fixes and improvement
+### Code fixes and improvement
 
 1. Switched from XHR callbacks to fetch + async/await
 
