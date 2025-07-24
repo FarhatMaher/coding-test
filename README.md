@@ -55,7 +55,7 @@ Check code style
 npm run lint
 ```
 
-#### Code issues identified:
+### Code issues identified
 
 1. XMLHttpRequest is asynchronous:
    - The xhr.onload function is asynchronous, meaning that the result is populated only when the request completes, but the getBooksByAuthor function does not handle this properly. The function immediately returns result before the request is complete, which will always return an empty array because the request is asynchronous.
@@ -64,7 +64,7 @@ npm run lint
 3. Incorrect module.exports:
    - The code exports GetBookListApiClient which is not defined. The correct export should be BookSearchApiClient.
 
-#### Code fixes and improvement
+### Code fixes and improvement
 
 1. Switched from XHR callbacks to fetch + async/await
 
