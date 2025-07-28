@@ -13,7 +13,7 @@
 
    ```bash
    git clone https://github.com/FarhatMaher/coding-test.git
-   cd coding-test-edfenergy
+   cd coding-test
    ```
 
 2. Install dependencies
