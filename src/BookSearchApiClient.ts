@@ -84,27 +84,31 @@ export default class BookSearchApiClient {
     for (let i = 0; i < bookNodes.length; i++) {
       const bookNode = bookNodes[i];
 
-      // Extract book details
-      const title = bookNode.getElementsByTagName("title")[0].textContent || "";
-      const author =
-        bookNode.getElementsByTagName("author")[0].textContent || "";
-      const isbn = bookNode.getElementsByTagName("isbn")[0].textContent || "";
+      // Access the <details> and <stock> elements
+      const detailsNode = bookNode.getElementsByTagName("details")[0];
+      const stockNode = bookNode.getElementsByTagName("stock")[0];
 
-      // Get the 'stock' element and extract quantity and price from it
-      const stockNode =
-        bookNode.parentElement?.getElementsByTagName("stock")[0];
+      // Extract values
+      const title =
+        detailsNode?.getElementsByTagName("title")[0]?.textContent || "";
+      const author =
+        detailsNode?.getElementsByTagName("author")[0]?.textContent || "";
+      const isbn =
+        detailsNode?.getElementsByTagName("isbn")[0]?.textContent || "";
+
       const quantity = stockNode
         ? parseInt(
             stockNode.getElementsByTagName("quantity")[0]?.textContent || "0",
+            10,
           )
         : 0;
+
       const price = stockNode
         ? parseFloat(
             stockNode.getElementsByTagName("price")[0]?.textContent || "0",
           )
         : 0;
 
-      // Push the book information to the books array
       books.push({ title, author, isbn, quantity, price });
     }
 
