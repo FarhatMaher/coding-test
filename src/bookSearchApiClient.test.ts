@@ -127,14 +127,28 @@ describe("BookSearchApiClient", () => {
     const mockXmlResponse = `
       <response>
         <book>
-          <title>Macbeth</title>
-          <author>Shakespeare</author>
-          <isbn>67890</isbn>
+          <details>
+            <title>Macbeth</title>
+            <author>Shakespeare</author>
+            <isbn>67890</isbn>
+          </details>
+          <stock>
+            <quantity>5</quantity>
+            <price>15.99</price>
+          </stock>
         </book>
-        <stock>
-          <quantity>5</quantity>
-          <price>15.99</price>
-        </stock>
+
+        <book>
+          <details>
+            <title>Memories</title>
+            <author>Aboul-Qacem Echebbi</author>
+            <isbn>7281</isbn>
+          </details>
+          <stock>
+            <quantity>3</quantity>
+            <price>10.00</price>
+          </stock>
+        </book>
       </response>
     `;
     // Mocking the global DOMParser
@@ -155,6 +169,13 @@ describe("BookSearchApiClient", () => {
         isbn: "67890",
         quantity: 5,
         price: 15.99,
+      },
+      {
+        title: "Memories",
+        author: "Aboul-Qacem Echebbi",
+        isbn: "7281",
+        quantity: 3,
+        price: 10.0,
       },
     ]);
   });
