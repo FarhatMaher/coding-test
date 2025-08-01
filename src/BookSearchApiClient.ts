@@ -57,7 +57,7 @@ export default class BookSearchApiClient {
       return books;
     } catch (error) {
       console.error("Error fetching books:", error);
-      throw new Error("Request failed.", { cause: error });
+      throw new Error("Failed to fetch books.", { cause: error });
     }
   }
 
