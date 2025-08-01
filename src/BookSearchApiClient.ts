@@ -118,13 +118,13 @@ export default class BookSearchApiClient {
     if (limit < 0) {
       throw new Error("Limit must be a non-negative integer");
     }
-    if (typeof authorName !== "string" || authorName.trim() === "") {
+    if (authorName.trim() === "") {
       throw new Error("Author name must be a valid non-empty string");
     }
   }
   // This method will check if the API URL is valid
   private validateApiUrl(apiUrl: string): void {
-    if (typeof apiUrl !== "string" || apiUrl.trim() === "") {
+    if (apiUrl.trim() === "") {
       throw new Error("API URL must be a valid non-empty string");
     }
 
