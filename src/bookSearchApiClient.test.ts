@@ -81,7 +81,7 @@ describe("BookSearchApiClient", () => {
 
     // Expect an error to be thrown when calling the API
     await expect(client.getBooksByAuthor("Shakespeare", 1)).rejects.toThrow(
-      "Request failed",
+      "Failed to fetch books.",
     );
   });
 
@@ -94,7 +94,7 @@ describe("BookSearchApiClient", () => {
 
     // Expect the promise to throw an error
     await expect(client.getBooksByAuthor("Shakespeare", 1)).rejects.toThrow(
-      "Request failed",
+      "Failed to fetch books.",
     );
   });
 
@@ -119,7 +119,7 @@ describe("BookSearchApiClient", () => {
     });
 
     await expect(client.getBooksByAuthor("Shakespeare", 1)).rejects.toThrow(
-      "Request failed",
+      "Failed to fetch books.",
     );
   });
 
@@ -196,7 +196,7 @@ describe("BookSearchApiClient", () => {
 
     // Test with invalid negative limit
     await expect(client.getBooksByAuthor("Shakespeare", -1)).rejects.toThrow(
-      "Request failed",
+      "Failed to fetch books.",
     );
   });
 
@@ -211,7 +211,7 @@ describe("BookSearchApiClient", () => {
 
     // Test with invalid negative limit
     await expect(client.getBooksByAuthor("", 1)).rejects.toThrow(
-      "Request failed",
+      "Failed to fetch books.",
     );
   });
 });

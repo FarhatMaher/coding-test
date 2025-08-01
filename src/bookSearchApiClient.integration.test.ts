@@ -46,7 +46,7 @@ describe("BookSearchApiClient - Integration Tests", () => {
 
     // Act & Assert: Expect an error to be thrown
     await expect(client.getBooksByAuthor("Shakespeare", 1)).rejects.toThrow(
-      "Request failed",
+      "Failed to fetch books.",
     );
   });
 });
